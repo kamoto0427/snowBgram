@@ -1,2 +1,14 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+.show-title
+  %h1 マイページ
+
+.show-image
+  = attachment_image_tag @user, :profile_image, fallback: "no-image.png", size: "190x260"
+
+.show-username
+  = @user.name
+
+.show-email
+  = @user.email
+
+.show-profile
+  = @user.profile
