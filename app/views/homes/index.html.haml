@@ -1,27 +1,3 @@
-.header
-  .title-menu
-    .title
-      = link_to 'snowBgram', '#'
-    .menu
-      %nav
-        %ul
-          %li 
-            = link_to 'HOME', '#'
-          %li 
-            = link_to 'snowB一覧', '#'
-          %li 
-            = link_to 'snowBユーザー', users_path
-    
-  .sign-in
-    .login-box
-      .login
-        = link_to 'ログイン', '#'
-    .new-registration-box
-      .new-registration
-        = link_to '新規登録', new_user_session_path
-    .log-out
-      = link_to 'ログアウト', destroy_user_session_path, method: :delete
-
 .main
   .image
     .snowB-search
