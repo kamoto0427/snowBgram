@@ -11,13 +11,16 @@
             = link_to 'snowB一覧', "#"
           %li 
             = link_to 'snowBユーザー', users_path
+
     
   .sign-in
-    .login-box
-      .login
-        = link_to 'ログイン', '#'
-    .new-registration-box
-      .new-registration
-        = link_to '新規登録', new_user_session_path
+  - if user_signed_in?
     .log-out
       = link_to 'ログアウト', destroy_user_session_path, method: :delete
+  - else
+    .login-box
+      .login
+        = link_to 'ログイン', new_user_session_path
+    .new-registration-box
+      .new-registration
+        = link_to '新規登録', new_user_registration_path
