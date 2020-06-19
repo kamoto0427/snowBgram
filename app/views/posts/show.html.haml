@@ -3,3 +3,11 @@
 = @post.title
 
 = simple_format @post.body
+
+- if @post.user.id == current_user.id
+  = link_to "編集", edit_post_path(@post)
+
+= @post.user.name
+
+= link_to user_path(@post.user) do
+  = @post.user.name
