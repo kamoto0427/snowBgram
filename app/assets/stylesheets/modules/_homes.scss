@@ -2,64 +2,7 @@
   box-sizing: border-box;
 }
 
-.header {
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-    .title-menu {
-      display: flex;
-      align-items: center;
-      .title a {
-        text-decoration: none;
-        font-size: 30px;
-        color: navy;
-      }
-      .menu {
-        margin-left: 300px;
-      }
-    }
-  ul {
-    display: flex;
-    li {
-      padding-left: 30px;
-    }
-      a {
-        font-size: 20px;
-        text-decoration: none;
-        color: blue;
-      }
-  }
-}
-
-.sign-in {
-  display: flex;
-  align-items: center;
-  .login-box {
-    width: 100px;
-    height: 40px;
-    background-color: aqua;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    .login a {
-      text-decoration: none;
-    }
-  }
-  .new-registration-box {
-    width: 100px;
-    height: 40px;
-    background-color: aqua;
-    margin: 0px 40px;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    .new-registration a {
-      text-decoration: none;
-    }
-    }
-}
-
-.image {
+.home-backgroud-image {
   min-width: 800px;
   height: 1000px;
   background-image: url("/images/markos-mant-_WRlPtKn39k-unsplash.jpg");
