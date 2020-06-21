@@ -1,2 +1,15 @@
-%h1 Posts#index
-%p Find me in app/views/posts/index.html.haml
+.posts-title
+  %h1 snowB一覧
+
+.posts-index
+  - @posts.each do |post|
+    .posts-box
+      .posts-box__image
+        = attachment_image_tag post, :image
+      .posts-profile-box
+        .posts-profile-box__image
+          = attachment_image_tag post.user, :profile_image, fallback: "no-image.png"
+        .posts-profile-box__username
+          %h1= post.user.name
+      .posts-profile-updateat
+        = post.updated_at.strftime("%Y-%m-%d %H:%M")

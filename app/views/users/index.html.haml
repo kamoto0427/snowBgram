@@ -6,7 +6,7 @@
     .profile-aaa
       .image-aaa
         = link_to user_path(user) do
-          = attachment_image_tag user, :profile_image, fallback: "no-image.png", size: "190x260"
+          = attachment_image_tag user, :profile_image, fallback: "no-image.png", size: "310x280"
       .contents
         .username-box
           = link_to user.name, user_path(user)
