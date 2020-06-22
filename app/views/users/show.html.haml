@@ -1,17 +1,17 @@
 .show-title
   %h1 マイページ
 
-.show-image
-  = attachment_image_tag @user, :profile_image, fallback: "no-image.png", size: "190x260"
+.show-box
+  .show-box__image
+    = attachment_image_tag @user, :profile_image, fallback: "no-image.png", size: "200x200"
 
-.show-username
-  = @user.name
-
-- if @user.id == current_user.id
-  .show-email
-    = @user.email
-  .edit-email-btn
-    = link_to "編集", edit_user_path(@user)
-
-.show-profile
-  = @user.profile
+  .show-contents
+    .show-contents__username
+      %h2= @user.name
+    - if @user.id == current_user.id
+      .show-contents__email
+        %p= @user.email
+    .show-contents__profile
+      = @user.profile
+.edit-email-btn
+  = link_to "プロフィール編集", edit_user_path(@user)

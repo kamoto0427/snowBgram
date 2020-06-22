@@ -1,13 +1,20 @@
-= attachment_image_tag @post, :image
+.post-each-show-box
+  .post-each-show-box__profile
+    .post-each-show-box__profile__image
+      = link_to user_path(@post.user) do
+        = attachment_image_tag @post.user, :profile_image, fallback: "no-image.png", size: "100x100"
+    .post-each-show-box__profile__username
+      = link_to user_path(@post.user) do
+        = @post.user.name
 
-= @post.title
+  .post-each-show-box__main-image
+    = attachment_image_tag @post, :image, size: "700x600"
+  .post-each-show-box__main-contents
+    .post-each-show-box__main-contents__title
+      = @post.title
+    .post-each-show-box__main-contents__body
+      = simple_format @post.body
+    .post-each-show-box__main-contents__edit-btn
+      - if @post.user.id == current_user.id
+        = link_to "編集", edit_post_path(@post)
 
-= simple_format @post.body
-
-- if @post.user.id == current_user.id
-  = link_to "編集", edit_post_path(@post)
-
-= @post.user.name
-
-= link_to user_path(@post.user) do
-  = @post.user.name

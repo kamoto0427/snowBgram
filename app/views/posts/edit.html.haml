@@ -1,13 +1,26 @@
-= form_for @post do |f|
-  = f.label :title
-  = f.text_field :title
+.posts-edit
+  %h1 snowBを編集する
 
-  = f.label :body
-  = f.text_area :body
-
-  = f.label :image
-  = f.attachment_field :image
-
-  = f.submit
+#account-page.account-page
+  .account-page__inner.clearfix
+    .post-new-edit-page
+      = form_for @post do |f|
+        .field
+          .field-label
+            = f.label :title, "snowB"
+          .field-input
+            = f.text_field :title
+        .field
+          .field-label
+            = f.label :body, "ココがポイント!"
+          .field-input
+            = f.text_area :body
+        .field
+          .field-label
+            = f.label :image, "snowB写真"
+          .field-input
+            = f.attachment_field :image
+        .actions
+          = f.submit "更新する", class: "btn"
 
 

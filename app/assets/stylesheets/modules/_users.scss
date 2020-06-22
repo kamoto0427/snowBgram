@@ -61,3 +61,50 @@
     text-align: center;
   }
 }
+
+.show-box {
+  display: flex;
+  &__image {
+    margin-top: 70px;
+    margin-left: 150px;
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.show-contents {
+  margin-top: 100px;
+  margin-left: 70px;
+  &__username {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  &__email {
+    font-size: 20px;
+  }
+  &__profile {
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+.edit-email-btn {
+  margin-top: 20px;
+  margin-left: 185px;
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    padding: 0.3em 1em;
+    font-size: 15px;
+    text-decoration: none;
+      &:hover {
+      background: #67c5ff;
+      color: white;
+    }
+  }
+}

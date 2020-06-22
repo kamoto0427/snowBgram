@@ -9,7 +9,7 @@
       = form_for(@user) do |f|
         .field
           .field-label
-            = f.label :name
+            = f.label :name, "ユーザー名"
           .field-input
             = f.text_field :name, autofocus: true
         .field
@@ -19,13 +19,13 @@
             = f.email_field :email
         .field
           .field-label
-            = f.label :profile
+            = f.label :profile, "プロフィール"
           .field-input
-            = f.text_field :profile
+            = f.text_area :profile
         .field
           .field-label
-            = f.label :profile_image
+            = f.label :profile_image, "プロフィール写真"
           .field-input
             = f.attachment_field :profile_image
         .actions
-          = f.submit "Update", class: 'btn'
+          = f.submit "更新", class: 'btn'
