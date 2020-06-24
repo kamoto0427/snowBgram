@@ -7,9 +7,14 @@
     .title-menu {
       display: flex;
       align-items: center;
-      .title a {
+      &__icon a{
+        font-size: 30px;
+        padding-left: 15px;
+      }
+      &__title a {
         text-decoration: none;
         font-size: 30px;
+        padding-left: 10px;
         color: navy;
       }
       .menu {
@@ -34,7 +39,29 @@
     &__log-out {
       width: 110px;
       height: 40px;
-      margin: 30px;
+      text-align: center;
+      margin-left: 10px;
+      margin-right: 20px;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: #67c5ff;
+        border: solid 2px #67c5ff;
+        border-radius: 3px;
+        transition: .4s;
+        padding: 0.3em 1em;
+        font-size: 15px;
+        text-decoration: none;
+          &:hover {
+          background: #67c5ff;
+          color: white;
+        }
+      }
+    }
+    &__new-post {
+      width: 110px;
+      height: 40px;
+      margin: 5px;
       text-align: center;
       a {
         display: inline-block;

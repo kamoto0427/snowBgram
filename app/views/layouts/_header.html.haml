@@ -1,8 +1,11 @@
 .header
   .title-menu
-    .title
+    .title-menu__icon
+      = link_to root_path do
+        = icon('fas', 'snowboarding')
+    .title-menu__title
       = link_to 'snowBgram', root_path
-    .menu
+    .title-menu__menu
       %nav
         %ul
           %li 
@@ -15,8 +18,13 @@
   
   .sign
     - if user_signed_in?
+      .sign__new-post
+        = link_to "新規投稿", new_post_path
+      .sign__new-post
+        = link_to "マイページ", user_path(current_user)
       .sign__log-out
         = link_to 'ログアウト', destroy_user_session_path, method: :delete
+
     - else
       .sign__login
         = link_to 'ログイン', new_user_session_path

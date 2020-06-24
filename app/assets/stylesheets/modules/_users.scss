@@ -108,3 +108,28 @@
     }
   }
 }
+
+.mypage-post-boxes {
+  display: flex;
+}
+
+.mypage-post-box {
+  width: 430px;
+  height: 550px;
+  margin: 60px;
+  border: inset;
+  &__contents {
+    height: 200px;
+    li {
+      padding-top: 20px;
+    }
+    ul li:last-child {
+      padding-left: 20px;
+    }
+    a {
+      font-size: 17px;
+      text-decoration: none;
+      padding-left: 30px;
+    }
+  }
+}
