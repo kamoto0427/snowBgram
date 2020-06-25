@@ -7,6 +7,10 @@
   line-height: 70px;
 }
 
+.show-backgroud {
+  background-color: #eeeeee;
+}
+
 .is-profile-boxes {
   display: flex;
   margin: 50px;
@@ -111,6 +115,7 @@
 
 .mypage-post-boxes {
   display: flex;
+  filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
 }
 
 .mypage-post-box {
@@ -118,6 +123,8 @@
   height: 550px;
   margin: 60px;
   border: inset;
+  background-color: #fff;
+
   &__contents {
     height: 200px;
     li {

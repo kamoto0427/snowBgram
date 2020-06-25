@@ -69,12 +69,20 @@
 .post-each-show-box {
   margin-left: 200px;
   margin-top: 100px;
-  width: 700px;
+  width: 725px;
+  border: ridge;
+  border-radius: 20px;
+  filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
   &__profile {
     display: flex;
-    &__image img {
-      border-radius: 50%;
+    padding: 10px;
+    &__image {
+      padding: 3px;
+      img {
+        border-radius: 50%;
+      }
     }
+
     &__username {
       margin-left: 50px;
       a {

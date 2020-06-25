@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     if @post.save
     redirect_to post_path(@post), notice: '投稿されました'
     else
-      render :new, '投稿できませんでした'
+      render :new, alert: '投稿できませんでした'
     end
   end
 

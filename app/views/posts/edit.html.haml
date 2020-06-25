@@ -1,6 +1,12 @@
 .posts-edit
   %h1 snowBを編集する
 
+- if @post.errors.any?
+  .alert
+    %ul
+      - @post.errors.full_messages.each do |message|
+        %li= message
+
 #account-page.account-page
   .account-page__inner.clearfix
     .post-new-edit-page

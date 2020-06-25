@@ -1,31 +1,41 @@
 .show-title
   %h1 マイページ
 
-.show-box
-  .show-box__image
-    = attachment_image_tag @user, :profile_image, fallback: "no-image.png", size: "200x200"
+.show-backgroud
+  .show-box
+    .show-box__image
+      = attachment_image_tag @user, :profile_image, fallback: "no-image.png", size: "200x200"
 
-  .show-contents
-    .show-contents__username
-      %h2= @user.name
-    - if @user.id == current_user.id
-      .show-contents__email
-        %p= @user.email
-    .show-contents__profile
-      = @user.profile
-.edit-email-btn
-  = link_to "プロフィール編集", edit_user_path(@user)
+    .show-contents
+      .show-contents__username
+        %h2= @user.name
+      - if @user.id == current_user.id
+        .show-contents__email
+          %p= @user.email
+      .show-contents__profile
+        = @user.profile
+  .edit-email-btn
+    = link_to "プロフィール編集", edit_user_path(@user)
 
-- if @user.id == current_user.id
-  .mypage-post-boxes
-    - @user.posts.each do |post|
-      .mypage-post-box
-        .mypage-post-box__image
-          = attachment_image_tag post, :image, size: "420x340"
-        .mypage-post-box__contents
-          %ul
-            %li= link_to "snowB詳細ページ", post_path(post)
-            = icon('fas', 'snowboarding')
-            %li= link_to "snowB編集ページ", edit_post_path(post)
-            %li= link_to "snowBを削除する", post_path(post), method: :delete, data: {confirm: "削除しますか？"}
-            %li= post.updated_at.strftime("%Y-%m-%d %H:%M")
+  - if @user.id == current_user.id
+    .mypage-post-boxes
+      - @user.posts.each do |post|
+        .mypage-post-box
+          .mypage-post-box__image
+            = attachment_image_tag post, :image, size: "420x340"
+          .mypage-post-box__contents
+            %ul
+              %li
+                = link_to post_path(post) do
+                  = icon('fas', 'snowboarding')
+                  = "詳細ページ"
+              %li
+                = link_to edit_post_path(post) do
+                  = icon('fas', 'edit')
+                  = "編集ページ"
+              %li
+                = link_to post_path(post), method: :delete, data: {confirm: "削除しますか？"} do
+                  = icon('far', 'trash-alt')
+                  = "投稿を削除する"
+              %li
+                = post.updated_at.strftime("%Y-%m-%d %H:%M")
