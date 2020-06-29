@@ -57,6 +57,15 @@
     color: lightskyblue;
     }
   }
+  &__favoritesBox {
+    display: flex;
+    font-size: 28px;
+    padding: 15px;
+    a {
+      padding-right: 10px;
+      color: sandybrown;
+    }
+  }
 }
 
 .posts-profile-updateat {
@@ -93,9 +102,21 @@
   &__main-contents {
     padding: 10px;
     margin-top: 10px;
-    &__title {
-      font-size: 30px;
-      margin-bottom: 10px;
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      &__title {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      &__favoritesBox {
+        display: flex;
+        font-size: 28px;
+        a {
+          padding-right: 10px;
+          color: sandybrown;
+        }
+      }
     }
     &__body {
       font-size: 20px;
