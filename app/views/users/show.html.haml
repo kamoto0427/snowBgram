@@ -14,28 +14,28 @@
           %p= @user.email
       .show-contents__profile
         = @user.profile
-  .edit-email-btn
-    = link_to "プロフィール編集", edit_user_path(@user)
-
   - if @user.id == current_user.id
-    .mypage-post-boxes
-      - @user.posts.each do |post|
-        .mypage-post-box
-          .mypage-post-box__image
-            = attachment_image_tag post, :image, size: "420x340"
-          .mypage-post-box__contents
-            %ul
-              %li
-                = link_to post_path(post) do
-                  = icon('fas', 'snowboarding')
-                  = "詳細ページ"
-              %li
-                = link_to edit_post_path(post) do
-                  = icon('fas', 'edit')
-                  = "編集ページ"
-              %li
-                = link_to post_path(post), method: :delete, data: {confirm: "削除しますか？"} do
-                  = icon('far', 'trash-alt')
-                  = "投稿を削除する"
-              %li
-                = post.updated_at.strftime("%Y-%m-%d %H:%M")
+    .edit-email-btn
+      = link_to "プロフィール編集", edit_user_path(@user)
+
+  .mypage-post-boxes
+    - @user.posts.each do |post|
+      .mypage-post-box
+        .mypage-post-box__image
+          = attachment_image_tag post, :image, size: "420x340"
+        .mypage-post-box__contents
+          .mypage-post-box__contents__show
+            = link_to post_path(post) do
+              = icon('fas', 'snowboarding')
+              = "詳細ページ"
+          - if @user.id == current_user.id
+            .mypage-post-box__contents__edit
+              = link_to edit_post_path(post) do
+                = icon('fas', 'edit')
+                = "編集ページ"
+            .mypage-post-box__contents__delete
+              = link_to post_path(post), method: :delete, data: {confirm: "削除しますか？"} do
+                = icon('far', 'trash-alt')
+                = "投稿を削除する"
+          .mypage-post-box__contents__time
+            = post.updated_at.strftime("%Y-%m-%d %H:%M")

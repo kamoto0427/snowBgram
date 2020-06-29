@@ -1,0 +1,39 @@
+.fotter
+  .fotter__top
+    .fotter__top__titleBox
+      .fotter__top__titleBox__icon
+        = link_to root_path do
+          = icon('fas', 'snowboarding')
+      .fotter__top__titleBox__title
+        = link_to 'snowBgram', root_path
+    .fotter__top__blogBox
+      .fotter__top__blogBox__top
+        .fotter__top__blogBox__top__left
+          %p 【個人のブログ】
+        .fotter__top__blogBox__top__right
+          = link_to 'カモメのススメ', "https://www.kamome-susume.com/"
+      .fotter__top__blogBox__bottom
+        .fotter__top__blogBox__bottom__contents-first
+          .fotter__top__blogBox__bottom__contents-first__icon-first
+            = icon('fas', 'pen-square')
+          .fotter__top__blogBox__bottom__contents-first__text-first
+            %p プログラミング・ライティング・スノーボードなど書いてます
+        .fotter__top__blogBox__bottom__contents-secound
+          .fotter__top__blogBox__bottom__contents-secound__icon-secound
+            = icon('fas', 'pen-square')
+          .fotter__top__blogBox__bottom__contents-secound__text-secound
+            %p プログラミング・ライティングLv.99までブログを更新し続けます
+
+
+  .fotter__middle
+    .fotter__middle__headerBox
+      %ul
+        %li
+          = icon('fas', 'chevron-right')
+          = link_to 'snowB一覧', posts_path
+        %li
+          = icon('fas', 'chevron-right')
+          = link_to 'snowBユーザー', users_path
+
+  .fotter__bottom
+    %h1 2020 created by kamome

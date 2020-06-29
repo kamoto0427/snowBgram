@@ -1,12 +1,16 @@
-.show-title
-  %h1 snowBユーザーリスト
+.show-userArea
+  .show-userlist-title
+    %h1 snowBユーザーリスト
 
-.is-profile-boxes
-  - @users.each do |user|
-    .profile-aaa
-      .image-aaa
-        = link_to user_path(user) do
-          = attachment_image_tag user, :profile_image, fallback: "no-image.png", size: "310x280"
-      .contents
-        .username-box
-          = link_to user.name, user_path(user)
+  .show-userArea__is-profile-boxes
+    - @users.each do |user|
+      .show-userArea__is-profile-boxes__profile
+        .show-userArea__is-profile-boxes__profile__image
+          = link_to user_path(user) do
+            = attachment_image_tag user, :profile_image, fallback: "no-image.png", size: "310x280"
+        .show-userArea__is-profile-boxes__profile__contents
+          .show-userArea__is-profile-boxes__profile__contents__username-box
+            = link_to user.name, user_path(user)
+          .show-userArea__is-profile-boxes__profile__contents__counts
+            投稿数:
+            = user.posts.count
