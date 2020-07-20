@@ -31,6 +31,17 @@ snowBgramはスノボー版インスタグラムです。
 - belongs_to :user
 - has_many :favorites, dependent: :destroy
 
+##commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer||
+|post_id|integer||
+|text|text|null :false|
+
+###Association
+- belongs_to :user
+- belongs_to :post
+
 
 ##favoritesテーブル
 |Column|Type|Options|
