@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##snowBgramの機能について
+snowBgramはスノボー版インスタグラムです。
+おすすめのボードやブーツ、ビンディングなどをシェアができます。
+スノーボードに特化させることで、全国のスノーボーダーたちのコミュニティになって欲しいという目的があります。
 
-Things you may want to cover:
+##usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null :false|
+|profile|text||
+|profile_image_id|string||
+|email|string|null :false|
+|password|string|null :false|
 
-* Ruby version
+###Association
+- has_many :posts, dependent: :destroy
+- has_many :favorites, dependent: :destroy
 
-* System dependencies
 
-* Configuration
+##postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null :false|
+|title|string|null :false|
+|body|text|null :false|
+|image_id|string|null :false|
 
-* Database creation
+###Association
+- belongs_to :user
+- has_many :favorites, dependent: :destroy
 
-* Database initialization
 
-* How to run the test suite
+##favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer||
+|post_id|integer||
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###Association
+- belongs_to :user
+- belongs_to :post
