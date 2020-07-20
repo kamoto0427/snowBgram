@@ -5,7 +5,7 @@ snowBgramはスノボー版インスタグラムです。
 おすすめのボードやブーツ、ビンディングなどをシェアができます。
 スノーボードに特化させることで、全国のスノーボーダーたちのコミュニティになって欲しいという目的があります。
 
-##usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null :false|
@@ -14,12 +14,12 @@ snowBgramはスノボー版インスタグラムです。
 |email|string|null :false|
 |password|string|null :false|
 
-###Association
+### Association
 - has_many :posts, dependent: :destroy
 - has_many :favorites, dependent: :destroy
 
 
-##postsテーブル
+## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null :false|
@@ -27,28 +27,28 @@ snowBgramはスノボー版インスタグラムです。
 |body|text|null :false|
 |image_id|string|null :false|
 
-###Association
+### Association
 - belongs_to :user
 - has_many :favorites, dependent: :destroy
 
-##commentsテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer||
 |post_id|integer||
 |text|text|null :false|
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :post
 
 
-##favoritesテーブル
+## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer||
 |post_id|integer||
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :post
