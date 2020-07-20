@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :users
   resources :posts do
-    resource :favorites, only: [:create, :destroy]
+    resources :comments, only: :create
+    resources :favorites, only: [:create, :destroy]
   end
 end
