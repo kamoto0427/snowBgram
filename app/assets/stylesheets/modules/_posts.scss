@@ -1,14 +1,3 @@
-.posts-title, .posts-new-title, .posts-edit-title, .post-show-title {
-  width: 100vw;
-  height: 60px;
-  background-color: lightskyblue;
-  h1 {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 60px;
-  }
-}
 //snowB投稿一覧画面
 .posts-indexArea {
   background: #f8f8f8;
@@ -72,74 +61,82 @@
   text-align: center;
 }
 //投稿の詳細画面
-.post-each-show-box {
-  margin: 0 auto;
-  margin-top: 70px;
-  margin-bottom: 70px;
-  width: 725px;
-  border: ridge;
-  border-radius: 20px;
-  filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
-  &__profile {
-    display: flex;
-    padding: 10px;
-    &__image {
-      padding: 3px;
-      img {
-        border-radius: 50%;
-      }
-    }
+.postWrapper {
+  padding: 70px 300px 100px 300px;
 
-    &__username {
-      margin-left: 50px;
-      a {
-        font-size: 30px;
-        line-height: 100px;
-        text-decoration: none;
-        color: lightskyblue;      
-      }
-    }
-  }
-  &__main-contents {
-    padding: 10px;
-    margin-top: 10px;
-    &__top {
+  &__each-show-box {
+    width: 725px;
+    border: ridge 2px;
+    border-radius: 20px;
+    filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
+    &__profile {
       display: flex;
-      justify-content: space-between;
-      &__title {
-        font-size: 30px;
-        margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: ridge 1px;
+
+      &__image {
+        padding: 3px;
+        img {
+          border-radius: 50%;
+        }
       }
-      &__favoritesBox {
-        display: flex;
-        font-size: 28px;
+      &__username {
+        margin-left: 50px;
         a {
-          padding-right: 10px;
-          color: sandybrown;
+          font-size: 30px;
+          line-height: 100px;
+          text-decoration: none;
+          color: lightskyblue;      
         }
       }
     }
-    &__body {
-      font-size: 20px;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+
+    &__main-image {
+      padding: 5px;
+      border-bottom: ridge 1px;
     }
-    &__edit-btn {
-      width: 100px;
-      height: 40px;
-      a {
-        position: relative;
-        display: inline-block;
+    
+    &__main-contents {
+      padding: 10px;
+      margin-top: 10px;
+      &__top {
+        display: flex;
+        &__title {
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+        &__favoritesBox {
+          display: flex;
+          font-size: 28px;
+          margin: 0 0 0 auto;
+          a {
+            padding-right: 10px;
+            color: sandybrown;
+          }
+        }
+      }
+      &__body {
         font-size: 20px;
-        font-weight: bold;
-        padding: 0.25em 0.5em;
-        text-decoration: none;
-        color: #00BCD4;
-        background: #ECECEC;
-        border-radius: 0 15px 15px 0;
-        transition: .4s;
-        &:hover {
-          background: #636363;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+      &__edit-btn {
+        width: 100px;
+        height: 40px;
+        a {
+          position: relative;
+          display: inline-block;
+          font-size: 20px;
+          font-weight: bold;
+          padding: 0.25em 0.5em;
+          text-decoration: none;
+          color: #00BCD4;
+          background: #ECECEC;
+          border-radius: 0 15px 15px 0;
+          transition: .4s;
+          &:hover {
+            background: #636363;
+          }
         }
       }
     }

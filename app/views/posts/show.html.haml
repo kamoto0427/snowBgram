@@ -1,33 +1,34 @@
-.post-show-title
-  %h1 snowB詳細ページ
+.postWrapper
+  .postWrapper__each-show-box
+    .postWrapper__each-show-box__profile
+      .postWrapper__each-show-box__profile__image
+        = link_to user_path(@post.user) do
+          = attachment_image_tag @post.user, :profile_image, fallback: "no-image.png", size: "100x100"
+      .postWrapper__each-show-box__profile__username
+        = link_to user_path(@post.user) do
+          = @post.user.name
 
-.post-each-show-box
-  .post-each-show-box__profile
-    .post-each-show-box__profile__image
-      = link_to user_path(@post.user) do
-        = attachment_image_tag @post.user, :profile_image, fallback: "no-image.png", size: "100x100"
-    .post-each-show-box__profile__username
-      = link_to user_path(@post.user) do
-        = @post.user.name
+    .postWrapper__each-show-box__main-image
+      = attachment_image_tag @post, :image, size: "710x600"
+    .postWrapper__each-show-box__main-contents
+      .postWapper__each-show-box__main-contents__top
+        .postWrapper__each-show-box__main-contents__top__title
+          = @post.title
+        .postWrapper__each-show-box__main-contents__top__favoritesBox
+          - if current_user.already_favorited?(@post)
+            = link_to post_favorites_path(@post), method: :delete do
+              = icon('fas', 'thumbs-up')
+          - else
+            = link_to post_favorites_path(@post), method: :post do
+              = icon('far', 'thumbs-up')
+          .postWrapper__each-show-box__main-contents__top__favoritesBox__count
+            = @post.favorites.count
+      .postWrapper__each-show-box__main-contents__body
+        = simple_format @post.body
+      .postWrapper__each-show-box__main-contents__edit-btn
+        - if @post.user.id == current_user.id
+          = link_to "編集", edit_post_path(@post)
 
-  .post-each-show-box__main-image
-    = attachment_image_tag @post, :image, size: "720x600"
-  .post-each-show-box__main-contents
-    .post-each-show-box__main-contents__top
-      .post-each-show-box__main-contents__top__title
-        = @post.title
-      .post-each-show-box__main-contents__top__favoritesBox
-        - if current_user.already_favorited?(@post)
-          = link_to post_favorites_path(@post), method: :delete do
-            = icon('fas', 'thumbs-up')
-        - else
-          = link_to post_favorites_path(@post), method: :post do
-            = icon('far', 'thumbs-up')
-        .posts-profile-box__favoritesBox__count
-          = @post.favorites.count
-    .post-each-show-box__main-contents__body
-      = simple_format @post.body
-    .post-each-show-box__main-contents__edit-btn
-      - if @post.user.id == current_user.id
-        = link_to "編集", edit_post_path(@post)
+  .postWrapper__commentsBox
+    %p コメント
 

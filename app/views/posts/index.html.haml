@@ -16,12 +16,12 @@
             %h1= link_to post.user.name, user_path(post.user.id)
           .posts-profile-box__favoritesBox
             .posts-profile-box__favoritesBox__favorite
-            -# - if current_user.already_favorited?(post)
-            -#   = link_to post_favorites_path(post), method: :delete do
-            -#     = icon('fas', 'thumbs-up')
-            -# - else
-            -#   = link_to post_favorites_path(post), method: :post do
-            -#     = icon('far', 'thumbs-up')
+            - if current_user.already_favorited?(post)
+              = link_to post_favorites_path(post), method: :delete do
+                = icon('fas', 'thumbs-up')
+            - else
+              = link_to post_favorites_path(post), method: :post do
+                = icon('far', 'thumbs-up')
             .posts-profile-box__favoritesBox__count
               = post.favorites.count
         .posts-profile-updateat
