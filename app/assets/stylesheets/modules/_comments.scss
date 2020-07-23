@@ -1,0 +1,24 @@
+.postWrapper {
+
+  &__commentsBox {
+    width: 725px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    &__comments {
+      input.commentsForm {
+      width: 500px;
+      height: 100px;
+      padding-left: 10px;
+      }
+      input.commentsSubmit {
+        width: 100px;
+        height: 40px;
+        color: #fff;
+        background-color: red;
+        margin-left: 60px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
