@@ -1,30 +1,38 @@
 * {
   box-sizing: border-box;
 }
-//home背景画像
-.home-backgroud-image {
+
+.homeWrapper {
+  padding-bottom: 180px;
+}
+
+.home-backgroudImage {
   min-width: 800px;
   height: 750px;
-  background-image: url("/images/markos-mant-_WRlPtKn39k-unsplash.jpg");
-  background-size: cover;
+  background-size: contain;
   position: relative;
+  img {
+    width: 100%;
+  }
 }
-//home検索画面
-.snowB-search {
+
+
+
+.home-snowB-search {
   width: 500px;
   height: 470px;
   background-color: #f0f0f0;
   position: absolute;
   top: 100px;
-  right: 80px;
+  left: 80px;
   border-radius: 30px;
   background-color: rgba( 230, 235, 255, 0.45 );
-    h1 {
-      font-size: 60px;
-    }
+  h1 {
+    font-size: 60px;
+  }
 }
 
-.check-box {
+.home-search-checkBox {
   width: 400px;
   height: 45px;
   background-color: skyblue;
@@ -32,15 +40,18 @@
   position: absolute;
   bottom: 35px;
   left: 50px;
-    .text {
+  
+  &__text {
     text-align: center;
     padding: 10px;
-    }
-      &:hover {
-        background-color: red;
-        &::after{
-          left: 0;
-          background-color: #cc1f00;
-        }
+    &:hover {
+      background-color: red;
+      &::after{
+        left: 0;
+        background-color: #cc1f00;
       }
+    }
+  }
 }
+
+

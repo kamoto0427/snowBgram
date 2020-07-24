@@ -2,16 +2,13 @@ a {
   text-decoration: none;
 }
 
-//snowB投稿一覧画面
-.posts-indexArea {
-  background: #f8f8f8;
-}
 //snowB1つ１つの投稿内容
 .posts-index {
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;
   margin-left: 150px;
+  padding-bottom: 180px;
   filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
 }
 .posts-box {
@@ -68,6 +65,7 @@ a {
 .postWrapper {
   padding: 70px 300px 100px 300px;
   background-color: #f5f5f5;
+  padding-bottom: 250px;
 
   &__each-show-box {
     width: 725px;

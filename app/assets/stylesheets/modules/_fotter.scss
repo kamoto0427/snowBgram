@@ -3,6 +3,8 @@
   height: 180px;
   padding: 30px 30px 5px 30px;
   background: #464c56;
+  position: fixed;
+  bottom: 0;
   &__top {
     display: flex;
     justify-content: space-between;

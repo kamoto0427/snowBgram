@@ -1,41 +1,38 @@
-.show-title
-  %h1 マイページ
-
-.show-backgroud
-  .show-box
-    .show-box__image
+.user-showWrapper
+  .user-showWrapper__profileBox
+    .user-showWrapper__profileBox__image
       = attachment_image_tag @user, :profile_image, fallback: "no-image.png", size: "200x200"
 
-    .show-contents
-      .show-contents__username
+    .user-showWrapper__profileBox__contents
+      .user-showWrapper__profileBox__contents__username
         %h2= @user.name
       - if @user.id == current_user.id
-        .show-contents__email
+        .user-showWrapper__profileBox__contents__email
           %p= @user.email
-      .show-contents__profile
+      .user-showWrapper__profileBox__contents__profile
         = @user.profile
   - if @user.id == current_user.id
-    .edit-email-btn
+    .user-showWrapper__profileBox__editBtn
       = link_to "プロフィール編集", edit_user_path(@user)
 
-  .mypage-post-boxes
+  .user-showWrapper__profileBox__postBoxes
     - @user.posts.each do |post|
-      .mypage-post-box
-        .mypage-post-box__image
+      .user-showWrapper__profileBox__postBoxes__postBox
+        .user-showWrapper__profileBox__postBoxes__postBox__image
           = attachment_image_tag post, :image, size: "420x340"
-        .mypage-post-box__contents
-          .mypage-post-box__contents__show
+        .user-showWrapper__profileBox__postBoxes__postBox__contents
+          .user-showWrapper__profileBox__postBoxes__postBox__contents__show
             = link_to post_path(post) do
               = icon('fas', 'snowboarding')
               = "詳細ページ"
           - if @user.id == current_user.id
-            .mypage-post-box__contents__edit
+            .user-showWrapper__profileBox__postBoxes__postBox__contents__edit
               = link_to edit_post_path(post) do
                 = icon('fas', 'edit')
                 = "編集ページ"
-            .mypage-post-box__contents__delete
+            .user-showWrapper__profileBox__postBoxes__postBox__contents__delete
               = link_to post_path(post), method: :delete, data: {confirm: "削除しますか？"} do
                 = icon('far', 'trash-alt')
                 = "投稿を削除する"
-          .mypage-post-box__contents__time
+          .user-showWrapper__profileBox__postBoxes__postBox__contents__time
             = post.updated_at.strftime("%Y-%m-%d %H:%M")

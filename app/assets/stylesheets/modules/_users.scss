@@ -1,22 +1,8 @@
-.show-backgroud, .show-userArea {
-  background: #f8f8f8;
-}
-//タイトル
-.show-title, .show-userlist-title {
-  width: 100vw;
-  height: 60px;
-  background-color: lightskyblue;
-  h1 {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 60px;
-  }
-}
 //snowBユーザーエリア
 .show-userArea {
   width: 100%;
   height: 100%;
+  padding-bottom: 180px;
   &__is-profile-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -65,53 +51,57 @@
     }
   }
 }
-//マイページのユーザー情報
-.show-box {
-  display: flex;
-  &__image {
-    margin-top: 70px;
-    margin-left: 150px;
-    img {
-      border-radius: 50%;
+
+.user-showWrapper {
+  background: #f8f8f8;
+  padding-bottom: 180px;
+  &__profileBox {
+    display: flex;
+    &__image {
+      margin-top: 70px;
+      margin-left: 150px;
+      img {
+        border-radius: 50%;
+        }
+      }
+
+    &__contents {
+      margin-top: 100px;
+      margin-left: 70px;
+      &__username {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      &__email {
+        font-size: 20px;
+      }
+      &__profile {
+        margin-top: 20px;
+        letter-spacing: 1px;
+      }
+    }
+    &__editBtn {
+      margin-top: 20px;
+      margin-left: 185px;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: #67c5ff;
+        border: solid 2px #67c5ff;
+        border-radius: 3px;
+        transition: .4s;
+        padding: 0.3em 1em;
+        font-size: 15px;
+        text-decoration: none;
+          &:hover {
+          background: #67c5ff;
+          color: white;
+        }
+      }
     }
   }
 }
-//ユーザー情報
-.show-contents {
-  margin-top: 100px;
-  margin-left: 70px;
-  &__username {
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
-  &__email {
-    font-size: 20px;
-  }
-  &__profile {
-    margin-top: 20px;
-    letter-spacing: 1px;
-  }
-}
-//プロフィール編集ボタン
-.edit-email-btn {
-  margin-top: 20px;
-  margin-left: 185px;
-  a {
-    display: inline-block;
-    text-decoration: none;
-    color: #67c5ff;
-    border: solid 2px #67c5ff;
-    border-radius: 3px;
-    transition: .4s;
-    padding: 0.3em 1em;
-    font-size: 15px;
-    text-decoration: none;
-      &:hover {
-      background: #67c5ff;
-      color: white;
-    }
-  }
-}
+
 // マイページ投稿一覧
 .mypage-post-boxes {
   display: flex;
@@ -142,3 +132,4 @@
     }
   }
 }
+
