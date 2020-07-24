@@ -2,13 +2,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f5f5f5;
+}
+
 .homeWrapper {
-  padding-bottom: 180px;
+  padding-bottom: 155px;
 }
 
 .home-backgroudImage {
   min-width: 800px;
-  height: 750px;
   background-size: contain;
   position: relative;
   img {
