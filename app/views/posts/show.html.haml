@@ -15,16 +15,7 @@
         .postWrapper__each-show-box__main-contents__top__title
           = @post.title
         .postWrapper__each-show-box__main-contents__top__favoritesBox
-          - if current_user.already_favorited?(@post)
-            = link_to post_favorites_path(@post), method: :delete do
-              = icon('fas', 'thumbs-up')
-          - else
-            = link_to post_favorites_path(@post), method: :post do
-              = icon('far', 'thumbs-up')
-          .postWrapper__each-show-box__main-contents__top__favoritesBox__count
-            = @post.favorites.count
-      .postWrapper__each-show-box__main-contents__body
-        = simple_format @post.body
+          = render partial: "layouts/favorite", locals: { post: @post }
       .postWrapper__each-show-box__main-contents__edit-btn
         - if @post.user.id == current_user.id
           = link_to "編集", edit_post_path(@post)
@@ -40,5 +31,5 @@
           -if @comments
             - @comments.each do |comment|
               %span
-                = link_to comment.user.username
+                -# = link_to comment.user.username
 
