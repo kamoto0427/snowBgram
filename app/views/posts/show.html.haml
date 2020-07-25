@@ -35,4 +35,10 @@
         = form_for [@post, @comment], local: true do |f|
           = f.text_field :text, placeholder: "気になったsnowBにコメントしよう!", class: "commentsForm"
           = f.submit "送信", class: "commentsSubmit"
+        .postWrapper__commentsBox__commentsLists
+          %h2 コメント一覧
+          -if @comments
+            - @comments.each do |comment|
+              %span
+                = link_to comment.user.username
 
