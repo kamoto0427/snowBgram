@@ -20,5 +20,35 @@
         border-radius: 5px;
       }
     }
+
+    &__commentsList {
+      margin-top: 20px;
+      h2 {
+        font-size: 25px;
+        padding-bottom: 20px;
+      }
+      &__contents1 {
+        display: flex;
+        height: auto;
+        border: ridge 1px;
+        padding: 10px;
+        &__leftBox {
+          width: 120px;
+          background-color: red;
+        }
+        &__rightBox {
+          padding-left: 50px;
+          &__username {
+            padding-bottom: 5px;
+          }
+          &__reply {
+            padding-bottom: 10px;
+          }
+          &__textBox {
+
+          }
+        }
+      }
+    }
   }
 }
