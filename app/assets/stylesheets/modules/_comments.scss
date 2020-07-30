@@ -33,12 +33,17 @@
         border: ridge 1px;
         padding: 10px;
         margin-bottom: 20px;
+        background-color: #eeffff;
         &__leftBox {
           width: 120px;
-          background-color: red;
+          img {
+            border-radius: 50%;
+            margin-left: 20px;
+            margin-top: 10px;
+          }
         }
         &__rightBox {
-          padding-left: 50px;
+          padding-left: 10px;
           &__username {
             padding-bottom: 5px;
           }
