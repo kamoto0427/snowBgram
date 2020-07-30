@@ -1,4 +1,4 @@
-- if post.favorite_by?(current_user)
+-# - if current_user.favorited_by?(post.id)
   = link_to post_favorites_path(post), method: :delete, remote: true do
     = icon('fas', 'thumbs-up')
 - else
