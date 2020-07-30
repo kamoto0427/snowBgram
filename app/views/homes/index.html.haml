@@ -4,6 +4,38 @@
     .home-snowB-search
       %h1 見つけよう、最高の相棒を
 
+      .home-snowB-search__comboBox
+        .home-snowB-search__comboBox__snowBselect
+          %label.seachBox-listname snowBを選ぶ
+          %select.comboBoxLists
+            %option 選択しない
+            %option ボード
+            %option ブーツ
+            %option ビンディング
+            %option その他
+        %br
+        %p.synergy ✖️
+       
+        .home-snowB-search__comboBox__brand
+          %label.seachBox-listname ブランド
+          %select.comboBoxLists
+            %option 選択しない
+            %option Burton
+            %option ride
+            %option bolcom
+            %option その他
+        %br
+        %p.synergy ✖️
+
+        .home-snowB-search__comboBox__price
+          %label.seachBox-listname 価格
+          %select.comboBoxLists
+            %option 選択しない
+            %option 〜¥5000
+            %option ¥5001〜10000
+            %option ¥10000〜50000
+            %option ¥50000以上
+
       .home-search-checkBox
         .home-search-checkBox__text
           = link_to 'チェックする'

@@ -19,11 +19,14 @@ body {
   }
 }
 
-
+@mixin comboBox {
+  display: flex;
+  justify-content: space-between;
+}
 
 .home-snowB-search {
   width: 500px;
-  height: 470px;
+  height: auto;
   background-color: #f0f0f0;
   position: absolute;
   top: 100px;
@@ -33,6 +36,35 @@ body {
   h1 {
     font-size: 60px;
   }
+  &__comboBox {
+    padding: 30px 50px;
+    &__snowBselect {
+      @include comboBox;
+    }
+    &__brand {
+      @include comboBox;
+    }
+    &__price {
+      @include comboBox;
+    }
+  }
+}
+
+.seachBox-listname {
+  font-size: 24px;
+  font-weight: bold;
+  color: wheat;
+  padding-top: 7px;
+}
+
+.comboBoxLists {
+  width: 160px;
+  height: 45px;
+}
+
+.synergy {
+  text-align: center;
+  font-size: 30px;
 }
 
 .home-search-checkBox {
@@ -40,9 +72,7 @@ body {
   height: 45px;
   background-color: skyblue;
   border-radius: 10px;
-  position: absolute;
-  bottom: 35px;
-  left: 50px;
+  margin: 30px 50px;
   
   &__text {
     text-align: center;
