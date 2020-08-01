@@ -9,8 +9,4 @@ class Post < ApplicationRecord
     validates :body
     validates :image
   end
-
-  def favorite_user(user_id)
-    favorites.find_by(user_id: user_id)
-  end
 end

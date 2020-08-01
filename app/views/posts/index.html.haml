@@ -12,6 +12,7 @@
           %h1= link_to post.user.name, user_path(post.user.id)
         .posts-profile-box__favoritesBox
           .posts-profile-box__favoritesBox__favorite
-            = render partial: "layouts/favorite", locals: { post: post }
+            %div{id: "favorite_#{post.id}"}
+              = render partial: "favorites/favorite", locals: { post: post }
       .posts-profile-updateat
         = post.updated_at.strftime("%Y-%m-%d %H:%M")
