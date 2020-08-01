@@ -1,8 +1,0 @@
-- if current_user.already_favorited?(post)
-  = link_to post_favorites_path(post), method: :delete do
-    = icon('fas', 'thumbs-up')
-- else
-  = link_to post_favorites_path(post), method: :post do
-    = icon('far', 'thumbs-up')
-.posts-profile-box__favoritesBox__count
-  = post.favorites.count

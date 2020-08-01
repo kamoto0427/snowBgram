@@ -1,0 +1,8 @@
+- if user_signed_in?
+  - if current_user.already_favorited?(post)
+    = link_to post_favorites_path(post), method: :delete, remote: true do
+      = icon('fas', 'thumbs-up')
+  - else
+    = link_to post_favorites_path(post), method: :post, remote: true do
+      = icon('far', 'thumbs-up')
+  = post.favorites.count

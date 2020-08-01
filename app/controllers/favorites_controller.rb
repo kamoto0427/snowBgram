@@ -1,13 +1,20 @@
 class FavoritesController < ApplicationController
+  before_action :snow_post
+  
   def create
-    @favorite = current_user.favorites.create(post_id: params[:post_id])
-    redirect_back(fallback_location: root_path)
+    @favorite = Favorite.create(user_id: current_user.id, post_id: params[:post_id])
+    @favorites = Favorite.where(post_id: params[:post_id])
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    @favorite = current_user.favorites.find_by(post_id: @post.id)
+    @favorite = Favorite.find_by(user_id: current_user.id, post_id: params[:post_id])
     @favorite.destroy
-    redirect_back(fallback_location: root_path)
+    @favorites = Favorite.where(post_id: params[:post_id])
+  end
+
+  private
+
+  def snow_post
+    @post = Post.find(params[:post_id])
   end
 end
