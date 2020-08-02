@@ -11,11 +11,12 @@
     .postWrapper__each-show-box__main-image
       = attachment_image_tag @post, :image, size: "710x600"
     .postWrapper__each-show-box__main-contents
-      .postWapper__each-show-box__main-contents__top
+      .postWapper__each-show-box__main-contents__top{style: 'display: flex;'}
         .postWrapper__each-show-box__main-contents__top__title
           = @post.title
         .postWrapper__each-show-box__main-contents__top__favoritesBox
-          = render partial: "layouts/favorite", locals: { post: @post }
+          %div{id: "favorite_#{@post.id}"}
+            = render partial: "favorites/favorite", locals: { post: @post }
       .postWrapper__each-show-box__main-contents__edit-btn
         - if @post.user.id == current_user.id
           = link_to "編集", edit_post_path(@post)
