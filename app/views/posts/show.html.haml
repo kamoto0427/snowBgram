@@ -11,7 +11,7 @@
     .postWrapper__each-show-box__main-image
       = attachment_image_tag @post, :image, size: "710x600"
     .postWrapper__each-show-box__main-contents
-      .postWapper__each-show-box__main-contents__top{style: 'display: flex;'}
+      .postWrapper__each-show-box__main-contents__top
         .postWrapper__each-show-box__main-contents__top__title
           = @post.title
         .postWrapper__each-show-box__main-contents__top__favoritesBox
