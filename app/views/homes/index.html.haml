@@ -12,6 +12,10 @@
             %option{value: "snowboard"} ボード
             %option{value: "snowboots"} ブーツ
             %option{value: "binding"} ビンディング
+            %option{value: "helmet"} ヘルメット
+            %option{value: "grove"} グローブ
+            %option{value: "wear"} ウェア
+            %option{value: "item"} アイテム
         %br
         %p.synergy ✖️
        
@@ -20,17 +24,113 @@
           %select.selectBoxLists{name: "ブランド", id: "children"}
             %option ブランドを選択
             -# スノーボードのブランド
-            %option{value: "Burton", "data-val": 'snowboard'} BURTON
+            %option{value: "BURTON", "data-val": 'snowboard'} BURTON
             %option{value: "K2", "data-val": 'snowboard'} K2
-            %option{value: "Burton", "data-val": 'snowboard'} SALOMON
+            %option{value: "SALOMON", "data-val": 'snowboard'} SALOMON
+            %option{value: "FLOW", "data-val": 'snowboard'} FLOW
+            %option{value: "OGASAKA", "data-val": 'snowboard'} OGASAKA
+            %option{value: "RIDE", "data-val": 'snowboard'} RIDE
+            %option{value: "ROME", "data-val": 'snowboard'} ROME
+            %option{value: "ALLIAN", "data-val": 'snowboard'} ALLIAN
+            %option{value: "YONEX", "data-val": 'snowboard'} YONEX
+            %option{value: "CAPiTA", "data-val": 'snowboard'} CAPiTA
+            %option{value: "NOVEMBER", "data-val": 'snowboard'} NOVEMBER
+            %option{value: "elan", "data-val": 'snowboard'} elan
+            %option{value: "Artistic", "data-val": 'snowboard'} Artistic
+            %option{value: "BC Stream", "data-val": 'snowboard'} BC Stream
+            %option{value: "others1", "data-val": 'snowboard'} その他
+
             -# ブーツのブランド
-            %option{value: "Burton", "data-val": 'snowboots'} BURTON
+            %option{value: "BURTON", "data-val": 'snowboots'} BURTON
             %option{value: "DEELUXE", "data-val": 'snowboots'} DEELUXE
             %option{value: "FLUX", "data-val": 'snowboots'} FLUX
+            %option{value: "thirtytwo", "data-val": 'snowboots'} thirtytwo
+            %option{value: "K2", "data-val": 'snowboots'} K2
+            %option{value: "SALOMON", "data-val": 'snowboots'} SALOMON
+            %option{value: "NIDECKER", "data-val": 'snowboots'} NIDECKER
+            %option{value: "RIDE", "data-val": 'snowboots'} RIDE
+            %option{value: "head", "data-val": 'snowboots'} head
+            %option{value: "ROME SDS", "data-val": 'snowboots'} ROME SDS
+            %option{value: "YONEX", "data-val": 'snowboots'} YONEX
+            %option{value: "adidas", "data-val": 'snowboots'} adidas
+            %option{value: "VANS", "data-val": 'snowboots'} VANS
+            %option{value: "DC", "data-val": 'snowboots'} DC
+            %option{value: "others2", "data-val": 'snowboots'} その他
+
             -# ビンディングのブランド
             %option{value: "BURTON", "data-val": 'binding'} BURTON
             %option{value: "UNION", "data-val": 'binding'} UNION
             %option{value: "FLUX", "data-val": 'binding'} FLUX
+            %option{value: "SALOMON", "data-val": 'binding'} SALOMON
+            %option{value: "FLOW", "data-val": 'binding'} FLOW
+            %option{value: "RIDE", "data-val": 'binding'} RIDE
+            %option{value: "FIX", "data-val": 'binding'} FIX
+            %option{value: "BENT METAL", "data-val": 'binding'} BENT METAL
+            %option{value: "SP", "data-val": 'binding'} SP
+            %option{value: "K2", "data-val": 'binding'} K2
+            %option{value: "F2", "data-val": 'binding'} F2
+            %option{value: "head", "data-val": 'binding'} head
+            %option{value: "ROME", "data-val": 'binding'} ROME
+            %option{value: "YONEX", "data-val": 'binding'} YONEX
+            %option{value: "elan", "data-val": 'binding'} elan
+            %option{value: "kissmark", "data-val": 'binding'} kissmark
+            %option{value: "others3", "data-val": 'binding'} その他
+
+            -# ヘルメットのブランド
+            %option{value: "SALOMON", "data-val": 'helmet'} SALOMON
+            %option{value: "GIRO", "data-val": 'helmet'} GIRO
+            %option{value: "SWANS", "data-val": 'helmet'} SWANS
+            %option{value: "BURTON", "data-val": 'helmet'} BURTON
+            %option{value: "SMITH", "data-val": 'helmet'} SMITH
+            %option{value: "K2", "data-val": 'helmet'} K2
+            %option{value: "uvex", "data-val": 'helmet'} uvex
+            %option{value: "Anon", "data-val": 'helmet'} Anon
+            %option{value: "Sandbox", "data-val": 'helmet'} Sandbox
+            %option{value: "BERN", "data-val": 'helmet'} BERN
+            %option{value: "MOON", "data-val": 'helmet'} MOON
+            %option{value: "ALPINA", "data-val": 'helmet'} ALPINA
+            %option{value: "kufun", "data-val": 'helmet'} kufun
+            %option{value: "PONTAPES", "data-val": 'helmet'} PONTAPES
+            %option{value: "Topki", "data-val": 'helmet'} Topki
+            %option{value: "KASK", "data-val": 'helmet'} KASK
+            %option{value: "others4", "data-val": 'helmet'} その他
+
+
+            -# グローブのブランド
+            %option{value: "BURTON", "data-val": 'grove'} BURTON
+            %option{value: "VOLCOM", "data-val": 'grove'} VOLCOM
+            %option{value: "SALOMON", "data-val": 'grove'} SALOMON
+            %option{value: "DAKINE", "data-val": 'grove'} DAKINE
+            %option{value: "neff", "data-val": 'grove'} neff
+            %option{value: "eb’s", "data-val": 'grove'} eb’s
+            %option{value: "oran’ge", "data-val": 'grove'} oran’ge
+            %option{value: "VOLUME", "data-val": 'grove'} VOLUME
+            %option{value: "ROXY", "data-val": 'grove'} ROXY
+            %option{value: "GRENADE", "data-val": 'grove'} GRENADE
+            %option{value: "3 REE", "data-val": 'grove'} 3 REE
+            %option{value: "kissmark", "data-val": 'grove'} kissmark
+            %option{value: "Ashram", "data-val": 'grove'} Ashram
+            %option{value: "DC", "data-val": 'grove'} DC
+            %option{value: "others5", "data-val": 'grove'} その他
+
+
+            -# ウェアのブランド
+            %option{value: "BURTON", "data-val": 'wear'} BURTON
+            %option{value: "VOLCOM", "data-val": 'wear'} VOLCOM
+            %option{value: "Analog", "data-val": 'wear'} Analog
+            %option{value: "686", "data-val": 'wear'} 686
+            %option{value: "REW", "data-val": 'wear'} REW
+            %option{value: "BILLABONG", "data-val": 'wear'} BILLABONG
+            %option{value: "THE NORTH FACE", "data-val": 'wear'} THE NORTH FACE
+            %option{value: "ARBN", "data-val": 'wear'} ARBN
+            %option{value: "HOLDEN", "data-val": 'wear'} HOLDEN
+            %option{value: "neff", "data-val": 'wear'} neff
+            %option{value: "othes6", "data-val": 'wear'} その他
+
+
+            -# アイテム
+            %option{value: "BURTON", "data-val": 'item'} BURTON
+
         %br
         %p.synergy ✖️
 
