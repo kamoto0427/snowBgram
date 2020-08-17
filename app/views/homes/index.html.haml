@@ -7,29 +7,36 @@
       .home-snowB-search__comboBox
         .home-snowB-search__comboBox__snowBselect
           %label.seachBox-listname snowBを選ぶ
-          %select.comboBoxLists
-            %option 選択しない
-            %option ボード
-            %option ブーツ
-            %option ビンディング
-            %option その他
+          %select.selectBoxLists{id: "parent", name: "snowB"}
+            %option{value: "", class: "msg"} snowBを選択
+            %option{value: "snowboard"} ボード
+            %option{value: "snowboots"} ブーツ
+            %option{value: "binding"} ビンディング
         %br
         %p.synergy ✖️
        
         .home-snowB-search__comboBox__brand
           %label.seachBox-listname ブランド
-          %select.comboBoxLists
-            %option 選択しない
-            %option Burton
-            %option rides
-            %option bolcom
-            %option その他
+          %select.selectBoxLists{name: "ブランド", id: "children"}
+            %option ブランドを選択
+            -# スノーボードのブランド
+            %option{value: "Burton", "data-val": 'snowboard'} BURTON
+            %option{value: "K2", "data-val": 'snowboard'} K2
+            %option{value: "Burton", "data-val": 'snowboard'} SALOMON
+            -# ブーツのブランド
+            %option{value: "Burton", "data-val": 'snowboots'} BURTON
+            %option{value: "DEELUXE", "data-val": 'snowboots'} DEELUXE
+            %option{value: "FLUX", "data-val": 'snowboots'} FLUX
+            -# ビンディングのブランド
+            %option{value: "BURTON", "data-val": 'binding'} BURTON
+            %option{value: "UNION", "data-val": 'binding'} UNION
+            %option{value: "FLUX", "data-val": 'binding'} FLUX
         %br
         %p.synergy ✖️
 
         .home-snowB-search__comboBox__price
           %label.seachBox-listname 価格
-          %select.comboBoxLists
+          %select.selectBoxLists
             %option 選択しない
             %option 〜¥5000
             %option ¥5001〜10000
