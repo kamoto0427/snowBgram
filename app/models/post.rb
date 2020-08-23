@@ -9,4 +9,6 @@ class Post < ApplicationRecord
     validates :body
     validates :image
   end
+
+  belongs_to :category
 end
