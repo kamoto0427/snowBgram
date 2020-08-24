@@ -57,7 +57,7 @@ class PostsController < ApplicationController
   end
 
   def set_categories
-    @parent_categories = Category.roots
+    @parent_categories = Category.where(ancestry: nil)
     @default_child_categories = @parent_categories.first.children
   end
 
