@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+  before_action :set_categories, only: [:edit, :new]
   def index
     @posts = Post.all
   end
@@ -50,6 +50,11 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :body, :image)
+  end
+
+  def set_categories
+    @parent_categories = Category.roots
+    @default_child_categories = @parent_categories.first.children
   end
 
 end
