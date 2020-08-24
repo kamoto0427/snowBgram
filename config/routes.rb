@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resource :favorites, only: [:create, :destroy]
   end
+  get :dynamic_select_category, to: 'posts#dynamic_select_category'
 end

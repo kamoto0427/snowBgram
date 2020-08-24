@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+  before_action :set_categories, only: [:edit, :new]
   def index
     @posts = Post.all
   end
@@ -47,9 +47,18 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def dynamic_select_category
+    @category = Category.find(params[:category_id])
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :body, :image)
+  end
+
+  def set_categories
+    @parent_categories = Category.where(ancestry: nil)
+    @default_child_categories = @parent_categories.first.children
   end
 
 end

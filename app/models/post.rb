@@ -10,5 +10,6 @@ class Post < ApplicationRecord
     validates :image
   end
 
-  belongs_to :category
+  has_many :post_categories, dependent: :destroy
+  has_many :categories, through: :post_categories
 end
