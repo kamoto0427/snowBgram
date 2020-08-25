@@ -1,4 +1,10 @@
 .categorySelect
   %select#pararent_category
-    - @parent_categoryies.each do |c|
-      = options_for_select([['= c.id', =c.name]])
+    - @parent_categories.each do |c|
+      %option{value: "parent"}
+        = c.name
+  
+  %select#children_category
+    - @default_child_categories.each do |c|
+      %option{value: "children"}
+        = c.name
