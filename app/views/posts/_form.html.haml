@@ -14,5 +14,7 @@
       = f.label :image, "snowB写真"
     .field-input
       = f.attachment_field :image
+  .category
+    = render partial: "category"
   .actions
     = f.submit "投稿する", class: "btn"

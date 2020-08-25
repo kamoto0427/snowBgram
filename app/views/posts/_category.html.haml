@@ -1,0 +1,4 @@
+.categorySelect
+  %select#pararent_category
+    - @parent_categoryies.each do |c|
+      = options_for_select([['= c.id', =c.name]])
