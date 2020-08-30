@@ -17,6 +17,5 @@ $(function() {
     } else {
       $children.removeAttr('disabled');
     }
-
   });
 });

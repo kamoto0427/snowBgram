@@ -14,7 +14,10 @@
       = f.label :image, "snowB写真"
     .field-input
       = f.attachment_field :image
-  .category
-    = render partial: "category"
+  .field
+    .field-label
+      = f.label :category, "カテゴリーを選択してください"
+    .field-input
+      = f.select :category_id, options_for_select(@category_parent_array.map{|c| [c[:name], c[:id]]}), {include_blank: "選択してください"}, {class: "parant_category_box", id: "parent_category"}
   .actions
     = f.submit "投稿する", class: "btn"
