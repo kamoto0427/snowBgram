@@ -18,6 +18,6 @@
     .field-label
       = f.label :category, "カテゴリーを選択してください"
     .field-input
-      = f.select :category_id, options_for_select(@category_parent_array.map{|c| [c[:name], c[:id]]}), {include_blank: "選択してください"}, {class: "parant_category_box", id: "parent_category"}
+      = f.select :category_ids, options_for_select( @category_parent_array.map{|c| [c, {}]}), {}, {class: "parent_select", id: "parent_category"}
   .actions
     = f.submit "投稿する", class: "btn"

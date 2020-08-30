@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_categories, only: [:edit, :new]
+  before_action :set_category, only:[:new, :create]
+
   def index
     @posts = Post.all
+    @category_parent_arrays = Category.where(ancestry: nil)
   end
 
   def show
@@ -13,6 +15,10 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  end
+
+  def get_category_children
+    @category_children = Category.find("#{params[parent_id]}").children
   end
 
   def create
@@ -47,18 +53,15 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def dynamic_select_category
-    @category = Category.find(params[:category_id])
-  end
-
   private
   def post_params
     params.require(:post).permit(:title, :body, :image)
   end
 
-  def set_categories
-    @parent_categories = Category.where(ancestry: nil)
-    @default_child_categories = @parent_categories.first.children
+  def set_category
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
-
 end

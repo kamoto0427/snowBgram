@@ -16,3 +16,6 @@
               = render partial: "favorites/favorite", locals: { post: post }
       .posts-profile-updateat
         = post.updated_at.strftime("%Y-%m-%d %H:%M")
+      .category
+        - @category_parent_arrays.each do |c|
+          = c.name
