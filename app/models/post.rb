@@ -12,4 +12,5 @@ class Post < ApplicationRecord
 
   has_many :post_categories, dependent: :destroy
   has_many :categories, through: :post_categories
+  accepts_nested_attributes_for :categories, allow_destroy: true
 end

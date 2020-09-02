@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @category_parent_arrays = Category.where(ancestry: nil)
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def show
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :image)
+    params.require(:post).permit(:title, :body, :image, :post_category)
   end
 
   def set_category
