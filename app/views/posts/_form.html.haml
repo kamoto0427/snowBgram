@@ -1,4 +1,4 @@
-= form_for(@post) do |f|
+= form_for(@post, local:true) do |f|
   .field
     .field-label
       = f.label :title, "snowB"
@@ -18,6 +18,6 @@
     .field-label
       = f.label :category_ids, "カテゴリーを選択してください"
     .field-input
-      = f.select :category_ids, options_for_select(@category_parent_array.pluck(:name, :id)), {class: "parent_select", id: "parent_category"}
+      = f.collection_select :category_ids, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {id: 'parent_category'}
   .actions
     = f.submit "投稿する", class: "btn"

@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_category, only:[:new, :create]
 
   def index
     @posts = Post.all
@@ -15,10 +14,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def get_category_children
-    @category_children = Category.find("#{params[parent_id]}").children
+    @category_children = Category.find(params[:parent_id]).children
   end
 
   def create
@@ -56,12 +56,5 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :body, :image, :post_category)
-  end
-
-  def set_category
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
   end
 end
