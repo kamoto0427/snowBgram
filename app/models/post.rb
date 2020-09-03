@@ -9,8 +9,5 @@ class Post < ApplicationRecord
     validates :body
     validates :image
   end
-
-  has_many :post_categories, dependent: :destroy
-  has_many :categories, through: :post_categories
-  accepts_nested_attributes_for :categories, allow_destroy: true
+  belongs_to :category
 end

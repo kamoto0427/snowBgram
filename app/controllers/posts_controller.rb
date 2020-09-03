@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @category_parent_array = Category.where(ancestry: nil)
+    @category_parents = Category.where(ancestry: nil)
   end
 
   def show
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @category_parent_array = Category.where(ancestry: nil)
+    @category_parent = Category.where(ancestry: nil)
   end
 
   def get_category_children
