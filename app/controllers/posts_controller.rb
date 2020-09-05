@@ -6,19 +6,13 @@ class PostsController < ApplicationController
     @category_parents = Category.where(ancestry: nil)
   end
 
-  def show
-    @post = Post.find(params[:id])
-    @comment = Comment.new
-    @comments = @post.comments.includes(:user)
-  end
-
   def new
     @post = Post.new
     @category_parent = Category.where(ancestry: nil)
   end
 
   def get_category_children
-    @category_children = Category.find(params[:parent_id]).children
+    @category_children = Category.find("#{params[:parent_id]}").children
   end
 
   def create
@@ -29,6 +23,15 @@ class PostsController < ApplicationController
     else
       render :new, alert: '投稿できませんでした'
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+
+    @category_id = @post.category_id
+    @category_parent = Category.find(@category_id).parent
   end
 
   def edit

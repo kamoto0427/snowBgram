@@ -21,6 +21,9 @@
         - if @post.user.id == current_user.id
           = link_to "編集", edit_post_path(@post)
 
+      .category_parent
+        = @post.category.name
+
   .postWrapper__commentsBox
     - if current_user
       .postWrapper__commentsBox__comments

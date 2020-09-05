@@ -17,10 +17,4 @@
       .posts-profile-updateat
         = post.updated_at.strftime("%Y-%m-%d %H:%M")
       .category
-        - @category_parents.each do |parent|
-          %li
-            = parent.name
-            %li.aaaaaaaa
-              - parent.children.each do |child|
-                %li
-                  =child.name
+        = @post.category.name if @post.present?

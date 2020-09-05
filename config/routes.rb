@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resource :favorites, only: [:create, :destroy]
     collection do
-      get 'get_category_children', to:'posts#get_category_children', defaults: { format: 'json' }
+      get 'get_category_children', defaults: { format: 'json' }
     end
   end
+  resources :categories, only: [:index]
 end
