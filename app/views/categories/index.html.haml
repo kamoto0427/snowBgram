@@ -1,7 +1,7 @@
 %ul.categories
   - @parents.each do |parent|
-    %li.parents= link_to "#{parent.name}", categories_path(parent)
+    %li.parents= link_to "#{parent.name}", category_path(parent)
 
     %ul.categories__children
       - parent.children.each do |child|
-        %li.childern= link_to "#{child.name}", categories_path(child)
+        %li.childern= link_to "#{child.name}", category_path(child)
