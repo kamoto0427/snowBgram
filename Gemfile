@@ -60,3 +60,4 @@ gem "refile-mini_magick"
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'seed-fu'
+gem 'gretel'
