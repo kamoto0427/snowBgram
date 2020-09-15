@@ -2,9 +2,11 @@
   &__profileBox {
     &__postBoxes {
       display: flex;
+      flex-flow: wrap;
       margin: 50px 150px;
        &__postBox {
         margin-right: 100px;
+        margin-bottom: 50px;
         border: outset;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
