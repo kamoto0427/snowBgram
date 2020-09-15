@@ -102,34 +102,3 @@
   }
 }
 
-// マイページ投稿一覧
-.mypage-post-boxes {
-  display: flex;
-  filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
-  flex-wrap: wrap;
-}
-//マイページ1つの投稿内容
-.mypage-post-box {
-  width: 430px;
-  margin: 50px 60px 60px 150px;
-  border: inset;
-  background-color: #fff;
-
-  &__contents {
-    padding: 10px;
-    &__show, &__edit, &__delete {
-      padding: 10px;
-      border-bottom: ridge 1px;
-    }
-    &__time {
-      padding-left: 40px;
-    }
-    a {
-      font-size: 17px;
-      text-decoration: none;
-      padding-left: 30px;
-      color: cornflowerblue;
-    }
-  }
-}
-
