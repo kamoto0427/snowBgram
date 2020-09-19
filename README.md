@@ -10,6 +10,7 @@ snowBgramはスノボー版インスタグラムです。
 - snowBの詳細/編集/削除
 - コメント投稿
 - いいね(非同期通信)
+- パンくず
 
 ## usersテーブル
 |Column|Type|Options|
@@ -23,6 +24,7 @@ snowBgramはスノボー版インスタグラムです。
 ### Association
 - has_many :posts, dependent: :destroy
 - has_many :favorites, dependent: :destroy
+- has_many :comments
 
 
 ## postsテーブル
@@ -30,18 +32,22 @@ snowBgramはスノボー版インスタグラムです。
 |------|----|-------|
 |user_id|integer|null :false|
 |title|string|null :false|
-|body|text|null :false|
+|appeal|text|null :false|
 |image_id|string|null :false|
+|category_id|integer||
 
 ### Association
 - belongs_to :user
+- attachment :image
+- belongs_to :user
 - has_many :favorites, dependent: :destroy
+- has_many :comments
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer||
-|post_id|integer||
+|user_id|integer|null :false|
+|post_id|integer|null :false|
 |text|text|null :false|
 
 ### Association
