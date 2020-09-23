@@ -10,6 +10,10 @@ https://docs.google.com/presentation/d/11eFXED9P-yuz1althV31Z4uBGy-0nVR5uzUiYT0J
 ![demo](https://gyazo.com/fe9b62bb17520bbfe1a845387985b812/raw)
 
 ## 動的セレクトボックス
+選択したsnowBによって、選択できるブランドが変化する。
+
+例えば、ボードを選択すれば、選択できるブランドは、[BURTON,K2,SALOMON]など
+ブーツであれば、選択できるブランドは、[BURTON,DEELUXE,FLUX]など
 ![demo](https://gyazo.com/bc13fff2159a547d1139800c5bf4c500/raw)
 ![demo](https://gyazo.com/4fe4e2b16512c800302a47bc3ca4c195/raw)
 
