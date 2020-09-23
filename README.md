@@ -9,6 +9,10 @@ https://docs.google.com/presentation/d/11eFXED9P-yuz1althV31Z4uBGy-0nVR5uzUiYT0J
 ## いいね機能(非同期通信)
 ![demo](https://gyazo.com/fe9b62bb17520bbfe1a845387985b812/raw)
 
+## 動的セレクトボックス
+![demo](https://gyazo.com/bc13fff2159a547d1139800c5bf4c500/raw)
+![demo](https://gyazo.com/4fe4e2b16512c800302a47bc3ca4c195/raw)
+
 ## snowBgramってどんなwebアプリ？
 snowBgramはスノボー版インスタグラムです。
 おすすめのボードやブーツ、ビンディングなどをシェアができます。
