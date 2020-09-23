@@ -1,3 +1,7 @@
+## アプリのガイドブック
+snowBgramの機能について、スライド形式で詳細にまとまっています。
+https://docs.google.com/presentation/d/11eFXED9P-yuz1althV31Z4uBGy-0nVR5uzUiYT0JKj0/edit#slide=id.g9aeb680ee7_0_267
+
 <img width="1427" alt="スクリーンショット 2020-09-19 11 35 25" src="https://user-images.githubusercontent.com/64408070/93657258-4e94ad80-fa6c-11ea-8319-b13558412c62.png">
 <img width="1429" alt="スクリーンショット 2020-09-19 11 35 39" src="https://user-images.githubusercontent.com/64408070/93657257-42105500-fa6c-11ea-8eba-2fa3b78734d1.png">
 
