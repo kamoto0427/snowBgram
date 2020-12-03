@@ -86,15 +86,15 @@
       a {
         display: inline-block;
         text-decoration: none;
-        color: #67c5ff;
-        border: solid 2px #67c5ff;
+        color: $user;
+        border: solid 2px $user;
         border-radius: 3px;
         transition: .4s;
         padding: 0.3em 1em;
         font-size: 15px;
         text-decoration: none;
           &:hover {
-          background: #67c5ff;
+          background: $user;
           color: white;
         }
       }
